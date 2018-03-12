@@ -1,6 +1,9 @@
 var Device = require('../controllers/device');
 
 module.exports = function (app) {
+
+    app.route('/')
+        .get(Device.home);
     //console.log(app);
     app.route('/device')
         .get(Device.getAll)

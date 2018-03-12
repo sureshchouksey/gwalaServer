@@ -49,6 +49,10 @@ let otherAdminApp = admin.initializeApp({
 },"Other");
 
 // Get all
+exports.home = (req, res) => {  
+ res.send('Welcome to server');
+}
+
 exports.getAll = (req, res) => {  
   Device.find({}, (err, docs) => {
     if (err) { return loggererror.info(err); }
