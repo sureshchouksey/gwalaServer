@@ -1,0 +1,8 @@
+{
+	//"DBHost" : "mongodb://localhost:27017/opusneodb",	
+	//"DBHost"	: "mongodb://sureshchouksey:suresh123@ds121495.mlab.com:21495/opusneodemo",
+	//"DBHost"	: "mongodb://192.168.99.100:27017/opusneodb"  // MongoDB in Docker
+	//"DBHost"	: "mongodb://database/opusneodb",  // MongoDB in Docker
+	"SECRET_TOKEN":"catswillruletheworld",
+	"DBHost"	: "mongodb://sureshchouksey:suresh123@ds263988.mlab.com:63988/gwalaserver"
+}
