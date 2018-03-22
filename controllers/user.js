@@ -30,21 +30,11 @@ let mongoose = require('mongoose');
 exports.login = (req,res) =>{
   var phoneNumber = req.body.phoneNumber;
    var password = req.body.password;
-
-  //  User.findOne({Email: email, Pass: pass}, (err, user)=> {
-  //     if(err) return next(err);
-  //     if(!user) return res.send('Not logged in!');
-
-  //     req.session.user = email;
-  //     return res.send('Logged In!);
-  //  });
   User.findOne({phoneNumber:phoneNumber,password:password},(err,user)=>{
          if(err) return next(err);
-       if(!user) return res.send('Not logged in!');
-
-       //req.session.user = email;
-
-       res.status(200).json({status:'success'});
+       if(!user) return res.send('Not logged in!');     
+      console.log(user.role);
+       res.status(200).json({status:'success',role:user.role});
   })
 }
 
@@ -101,7 +91,7 @@ function authenticate(username, password) {
       if (err) {
         return console.error(err);
       }
-      res.json(item);
+      res.json({'status':'success'});
     });
   }
 
