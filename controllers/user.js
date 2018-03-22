@@ -107,16 +107,16 @@ function authenticate(username, password) {
   // Update by id
   exports.update = (req, res) => {
     User.findOneAndUpdate({ _id: req.params.id }, req.body, (err) => {
-      if (err) { return console.error(err); }
-      res.sendStatus(200);
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
     });
   }
 
   // Update by id
   exports.updatePIN = (req, res) => {
     User.update({ phoneNumber: req.body.phoneNumber}, {$set:{password:req.body.mPin}}, (err) => {
-      if (err) { return console.error(err); }
-      res.sendStatus(200);
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
     });
   }
 
